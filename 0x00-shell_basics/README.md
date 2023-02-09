@@ -15,3 +15,4 @@ u+x 14-copy_html
 101-clean_emacs
 102-tree
 103-commas
+school.mgc
