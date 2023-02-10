@@ -8,3 +8,4 @@
 7-everybody
 9-John_Doe
 10-mirror_permissions
+11-directories_permissions
