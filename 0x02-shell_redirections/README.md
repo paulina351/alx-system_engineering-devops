@@ -5,3 +5,4 @@
 6-third_line
 7-file
 8-cwd_state
+9-dublicate_last_line
