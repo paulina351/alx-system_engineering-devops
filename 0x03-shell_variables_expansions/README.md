@@ -13,3 +13,4 @@ shell expansions and variables
 11-binary_to_decimal
 12-combinations
 13th-print_float
+100-decimal_to_hexadecimal
