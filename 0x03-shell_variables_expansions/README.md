@@ -14,3 +14,4 @@ shell expansions and variables
 12-combinations
 13th-print_float
 100-decimal_to_hexadecimal
+101-rot13
