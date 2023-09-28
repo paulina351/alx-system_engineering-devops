@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# A bash script that displays "4,9,17" as bad luch from "china,japan,italy"
+b=1
+while [ "$b" -le 20 ]
+do
+	echo "$b"
+	case $b in
+		4)
+			echo "bad luck from China"
+			;;
+		9)
+			echo "bad luck from Japan"
+			;;
+		17)
+			echo "bad luck from Italy"
+	esac
+	((b++))
+done
