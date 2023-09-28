@@ -4,5 +4,5 @@ b=0
 while [ $b -lt 10 ]
 do
 	echo "Best school"
-	((b++))
+	(( b++ ))
 done
