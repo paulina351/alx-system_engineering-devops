@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# A bash script that displays 4 as bad luck and 8 as good luck
+b=1
+while [ "$b" -le 10 ]
+do
+	if [ $b == 4 ]
+	then
+		echo "bad luck"
+	elif [ $b == 8 ]
+	then
+		echo "good luck"
+	else
+		echo "Best School"
+	fi
+	((b++))
+done
