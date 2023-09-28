@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# A bash script that displays number from 1 to 100 for fizzbuzz task
+
+display=1
+while [ "$display" -lt 101 ]
+do
+	if [ $((display%15)) = 0 ]
+	then
+		echo "FizzBuzz"
+	elif [ $((display%3)) = 0 ]
+	then
+		echo "Fizz"
+	elif [ $((display%5)) = 0 ]
+	then
+		echo "Buzz"
+	else
+		echo "$display"
+	fi
+((display++))
+done
