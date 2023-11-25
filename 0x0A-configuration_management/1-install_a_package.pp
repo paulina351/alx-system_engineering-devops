@@ -2,6 +2,6 @@
 # using puppet
 
 package { 'puppet-lint':
-  ensure   => '3.0.0',
+  ensure   => '2.1.1',
   provider => 'gem',
 }
