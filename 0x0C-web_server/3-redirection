@@ -1,3 +1,4 @@
+#!usr/bin/env bash
 # Configure your Nginx server so that  is redirecting to another page
 
 apt-get -y update
