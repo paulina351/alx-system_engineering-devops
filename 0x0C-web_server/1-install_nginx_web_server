@@ -1,19 +1,10 @@
 #!/usr/bin/env bash
 # installing a web server nginx
 
-apt-get -y update
-apt-get -y install ngnix
+sudo apt-get -y update
+sudo apt-get -y install ngnix
 
 touch /var/www/html/index.html
 echo "Hello World!" > /var/www/html/index.html
 
-printf %s "server {
-    listen		80 default_server;
-    listen		[::]:80 default_server;
-
-    root		/var/www/html;
-    index		index.html index.htm index.ngnix-debian.html;
-}
-" > /etc/ngnix/sites-available/default
-
-service ngnix restart
+service ngnix start
