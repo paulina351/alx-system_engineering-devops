@@ -1,4 +1,4 @@
-					***INCIDENT REPORT FOR DRUM INFRASTRUCTURE***
+					*** ## INCIDENT REPORT FOR DRUM INFRASTRUCTURE***
 
 **Issue Summary**:
  
@@ -26,11 +26,11 @@ At 12:30 PM GMT, a configuration change was inadvertently released to our produc
 
 **Resolution and Recovery**:
 
-At 12:41 PM GMT, the monitoring systems alerted our engineers who investigated and quickly escalated the issue. By 12:51 PM, the incident response team identified that the monitoring system was exacerbating the problem caused by this bug.
+At `12:41 PM` GMT, the monitoring systems alerted our engineers who investigated and quickly escalated the issue. By `12:51 PM`, the incident response team identified that the monitoring system was exacerbating the problem caused by this bug.
 
-At 01:10 PM, we attempted to rollback the problematic configuration change. This rollback failed due to complexity in the configuration systemwhich caused our security checks to reject the rollback. These problems were addressed and we successfully rolled back at 01:31 PM.
+At `01:10 PM`, we attempted to rollback the problematic configuration change. This rollback failed due to complexity in the configuration systemwhich caused our security checks to reject the rollback. These problems were addressed and we successfully rolled back at `01:31 PM`.
 
-Some jobs started to slowly recover, and we determined that the overall recovery would be faster by a restart of all of the API infrastructureservers globally. To help with the recovery, we turned off some of our monitoring systems which were triggering the bug. As a result, we decided to restart servers gradually (at 7:19 PM), to avoid possible cascading failures from a wide scale restart. By 01:35 PM, 25% of traffic was restored and 100% of traffic was routed to the API infrastructure at 02:14 PM.
+Some jobs started to slowly recover, and we determined that the overall recovery would be faster by a restart of all of the API infrastructureservers globally. To help with the recovery, we turned off some of our monitoring systems which were triggering the bug. As a result, we decided to restart servers gradually (at `7:19 PM`), to avoid possible cascading failures from a wide scale restart. By `01:35 PM`, 25% of traffic was restored and 100% of traffic was routed to the API infrastructure at `02:14 PM`.
 
 
 
