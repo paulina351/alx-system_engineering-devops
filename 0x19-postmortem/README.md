@@ -5,6 +5,7 @@
 From 12:30 PM to 02:14 PM GMT, requests to most  Drum APIs resulted in 90 error response messages. Drum applications that rely on these APIs also returned errors or had reduced functionality. At its peak, the issue affected 100% of traffic to this API infrastructure. Users could continue to access certain APIs that run on separate infrastructures. The root cause of this outage was an invalid configuration change that exposed a bug in a widely used internal library.
 
 
+
 **Timeline**:
 
 * 12:30 PM: Configuration push begins
@@ -16,18 +17,21 @@ From 12:30 PM to 02:14 PM GMT, requests to most  Drum APIs resulted in 90 error 
 * 02:14 PM: 100% of traffic back online
 
 
+
 **Root cause**:
 
-At 12:30 PM GMT, a configuration change was inadvertently released to our production environment without first being released to the testing environment. The change specified an invalid address for the authentication servers in production. This exposed a bug in the authentication libraries which caused them to block permanently while attempting to resolve the invalid address to physical services. In addition, the internal monitoring systems permanently blocked on this call to the authentication library. The combination of the bug and configuration error quickly caused all of the serving threads to be consumed. Traffic was permanently queued waiting for a serving thread to become available. The servers began repeatedly hanging and restarting as they attempted to recover and at 12:41 PM GMT, the service outage began.
+At 12:30 PM GMT, a configuration change was inadvertently released to our production environment without first being released to the testing environment. The change specified an invalid address for the authentication servers in production. This exposed a bug in the authentication libraries which caused them to block permanently while attempting to resolve the invalid address to physical services. In addition, the internal monitoring systems permanently blocked on this call to the authentication library. The combination of the bug and configuration error quickly caused all of the serving threads to be consumed. Traffic was permanently queued waiting for a serving thread to become available. The serversbegan repeatedly hanging and restarting as they attempted to recover and at 12:41 PM GMT, the service outage began.
+
 
 
 **Resolution and Recovery**:
 
 At 12:41 PM GMT, the monitoring systems alerted our engineers who investigated and quickly escalated the issue. By 12:51 PM, the incident response team identified that the monitoring system was exacerbating the problem caused by this bug.
 
-At 01:10 PM, we attempted to rollback the problematic configuration change. This rollback failed due to complexity in the configuration system which caused our security checks to reject the rollback. These problems were addressed and we successfully rolled back at 01:31 PM.
+At 01:10 PM, we attempted to rollback the problematic configuration change. This rollback failed due to complexity in the configuration systemwhich caused our security checks to reject the rollback. These problems were addressed and we successfully rolled back at 01:31 PM.
 
-Some jobs started to slowly recover, and we determined that the overall recovery would be faster by a restart of all of the API infrastructure servers globally. To help with the recovery, we turned off some of our monitoring systems which were triggering the bug. As a result, we decided to restart servers gradually (at 7:19 PM), to avoid possible cascading failures from a wide scale restart. By 01:35 PM, 25% of traffic was restored and 100% of traffic was routed to the API infrastructure at 02:14 PM.
+Some jobs started to slowly recover, and we determined that the overall recovery would be faster by a restart of all of the API infrastructureservers globally. To help with the recovery, we turned off some of our monitoring systems which were triggering the bug. As a result, we decided to restart servers gradually (at 7:19 PM), to avoid possible cascading failures from a wide scale restart. By 01:35 PM, 25% of traffic was restored and 100% of traffic was routed to the API infrastructure at 02:14 PM.
+
 
 
 **Corrective and Preventive Measures**:
