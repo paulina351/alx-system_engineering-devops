@@ -1,4 +1,4 @@
-					***__Incident Report for Drum Infrastructure__***
+					***INCIDENT REPORT FOR DRUM INFRASTRUCTURE***
 
 **Issue Summary**:
  
