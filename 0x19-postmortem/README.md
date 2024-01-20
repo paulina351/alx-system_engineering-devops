@@ -37,13 +37,15 @@ Some jobs started to slowly recover, and we determined that the overall recovery
 **Corrective and Preventive Measures**:
 
 In the last two days, we’ve conducted an internal review and analysis of the outage. The following are actions we are taking to address the underlying causes of the issue and to help prevent recurrence and improve response times:
-Disable the current configuration release mechanism until safer measures are implemented. (Completed.)
-Change rollback process to be quicker and more robust.
-Fix the underlying authentication libraries and monitoring to correctly timeout/interrupt on errors.
-Programmatically enforce staged rollouts of all configuration changes.
-Improve process for auditing all high-risk configuration options.
-Add a faster rollback mechanism and improve the traffic ramp-up process, so any future problems of this type can be corrected quickly.
-Develop better mechanism for quickly delivering status notifications during incidents.
+
+* Disable the current configuration release mechanism until safer measures are implemented. (Completed.)
+* Change rollback process to be quicker and more robust.
+* Fix the underlying authentication libraries and monitoring to correctly timeout/interrupt on errors.
+* Programmatically enforce staged rollouts of all configuration changes.
+* Improve process for auditing all high-risk configuration options.
+* Add a faster rollback mechanism and improve the traffic ramp-up process, so any future problems of this type can be corrected quickly.
+* Develop better mechanism for quickly delivering status notifications during incidents.
+
 Drum is committed to continually and quickly improving our technology and operational processes to prevent outages. We appreciate your patience and again apologize for the impact to you, your users, and your organization. We thank you for your business and continued support.
 
 _Sincerely_,
