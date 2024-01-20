@@ -1,6 +1,8 @@
 					***INCIDENT REPORT FOR DRUM INFRASTRUCTURE***
 
 **Issue Summary**:
+				![Image of an API][API]
+				[Image of an API](https://d2908q01vomqb2.cloudfront.net/fc074d501302eb2b93e2554793fcaf50b3bf7291/2022/08/15/Figure-4.-API-version-found-1.png)
  
 From 12:30 PM to 02:14 PM GMT, requests to most  Drum APIs resulted in 90 error response messages. Drum applications that rely on these APIs also returned errors or had reduced functionality. At its peak, the issue affected 100% of traffic to this API infrastructure. Users could continue to access certain APIs that run on separate infrastructures. The root cause of this outage was an invalid configuration change that exposed a bug in a widely used internal library.
 
